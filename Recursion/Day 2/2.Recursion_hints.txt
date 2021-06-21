@@ -1,0 +1,39 @@
+
+🔰Hints:
+
+PowerSet Hint:
+
+Try thinking about the base cases. What is the powerset of the empty set? What is the powerset of sets of length 1?
+
+If you were to take the input set X and add an element to it, how would the resulting powerset change?
+
+
+Can you solve this problem recursively? Can you solve it iteratively? What are the advantages and disadvantages of using either approach?
+
+Time-Space Complexity: O(n*2^n) time | O(n*2^n) space - where n is the length of the input array
+
+Phone Number Mnemonics Hint:
+
+The first thing you'll need to do is create a mapping from digits to letters. You can do this by creating a hash table mapping all string digits to lists of their respective characters.
+
+
+This problem can be solved fairly easily using recursion. Try generating all characters for the first digit in the phone number one at a time, and for each character, recursively performing the same action on the next digit, and then on the digit after that, and so on and so forth until you've done so for all digits in the phone number.
+
+You can recursively generate characters one digit at a time and store the intermediate results in an array. Once you've reached the last digit in the phone number, you can add the currently generated mnemonic (stored in the previously mentioned array) to a final array that stores all the results.
+
+Time-Space Complexity:
+
+O(4^n * n) time | O(4^n * n) space - where n is the length of the phone number
+
+Staircase Traversal Hint:
+
+If you can advance 2  steps at a time, how many ways can you reach a staircase of height 1  and of height 2? Think
+recursively.
+
+if you know the number of ways to climb a staircase of height 1 and of height 2, how many ways are there to climb a staircase of height 3  (assuming the same max steps of 2 )? 
+
+The number of ways to climb a staircase of height k with a max number of steps s is: numWays[k - 1] + numWays[k - 2] + ... + numWays[k - s] . This is because if you can advance between 1 and s steps, then from each step k - 1, k - 2, ..., k - s, you can directly advance to the top of a staircase of height k. By adding the number of ways to reach all steps that you can directly advance to the top step from, you determine how many ways there are to reach the top step.
+
+Time-Space Complexity:
+
+O(n) time | O(n) space - where n is the height of the staircase

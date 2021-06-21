@@ -1,0 +1,9 @@
+a=[]
+def subset():
+   if len(a)==0:
+       a.append([])
+       print(a)
+   elif len(a)==1:
+       print("[[],[{}]]".format(a[0]))
+   else:
+       for i in range(2**len(a)):
